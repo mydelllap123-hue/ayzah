@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-pickle-50: #fff9f5;
+  --color-pickle-100: #ffecd9;
+  --color-pickle-200: #ffd3b3;
+  --color-pickle-500: #ea580c; /* Soft orange/mango */
+  --color-pickle-600: #c2410c; /* Spicy red/orange */
+  --color-pickle-700: #9a3412;
+  
+  --color-leaf-500: #65a30d;
+  --color-leaf-600: #4d7c0f;
+
+  --color-brown-800: #451a03;
+  --color-brown-900: #290f02;
+
+  --font-sans: 'Poppins', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+:root {
+  --background: #fff9f5;
+  --foreground: #451a03;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle steam animation for hero section */
+@keyframes steam {
+  0% { transform: translateY(0) scaleX(1); opacity: 0; }
+  15% { opacity: 0.5; }
+  50% { transform: translateY(-50px) scaleX(1.5); opacity: 0.2; }
+  100% { transform: translateY(-100px) scaleX(2); opacity: 0; }
+}
+
+.animate-steam {
+  animation: steam 6s infinite ease-out;
+}
