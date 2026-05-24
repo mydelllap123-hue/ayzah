@@ -59,4 +59,4 @@ if (mongoose.models && mongoose.models.Category) {
 }
 
 export default mongoose.models.Category ||
-  mongoose.model("Category", CategorySchema);
+  mongoose.model("Category", CategorySchema, "categories");

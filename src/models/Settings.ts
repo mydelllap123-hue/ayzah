@@ -7,6 +7,8 @@ const SettingsSchema = new Schema({
   phone: { type: String, default: "", trim: true },
   email: { type: String, default: "", trim: true },
   address: { type: String, default: "", trim: true },
+  deliveryCharge: { type: Number, default: 0 },
+  enableOnlinePayment: { type: Boolean, default: false },
   socialLinks: {
     facebook: { type: String, default: "" },
     instagram: { type: String, default: "" },
@@ -19,5 +21,5 @@ if (models && models.Settings) {
   delete (mongoose as any).models.Settings;
 }
 
-const Settings = models.Settings || model("Settings", SettingsSchema);
+const Settings = models.Settings || model("Settings", SettingsSchema, "settings");
 export default Settings;

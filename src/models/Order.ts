@@ -39,5 +39,5 @@ const OrderSchema = new Schema({
   paymentId: { type: String }, // For Razorpay
 }, { timestamps: true });
 
-const Order = models.Order || model("Order", OrderSchema);
+const Order = models.Order || model("Order", OrderSchema, "orders");
 export default Order;

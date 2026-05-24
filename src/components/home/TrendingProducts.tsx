@@ -14,7 +14,7 @@ export default function TrendingProducts() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("/api/products");
+        const res = await fetch("/api/products", { cache: "no-store" });
         const data = await res.json();
         setProducts(data.data || data.products || []);
       } catch (error) {

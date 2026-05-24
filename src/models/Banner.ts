@@ -15,5 +15,5 @@ if (models && models.Banner) {
   delete (mongoose as any).models.Banner;
 }
 
-const Banner = models.Banner || model("Banner", BannerSchema);
+const Banner = models.Banner || model("Banner", BannerSchema, "banners");
 export default Banner;

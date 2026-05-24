@@ -24,5 +24,5 @@ if (models && models.Product) {
   delete (mongoose as any).models.Product;
 }
 
-const Product = models.Product || model("Product", ProductSchema);
+const Product = models.Product || model("Product", ProductSchema, "products");
 export default Product;

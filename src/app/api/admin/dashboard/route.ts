@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
 import Order from "@/models/Order";
@@ -22,7 +25,7 @@ export async function GET() {
       Order.find(),
       Product.countDocuments(),
       User.countDocuments(),
-      User.countDocuments({ role: "customer" }),
+      User.countDocuments({ role: "user" }),
       Product.countDocuments({ stock: { $lte: 5 } }), // Alert at stock <= 5
       Product.find({ stock: { $lte: 5 } }).limit(5),
       Order.find().sort({ createdAt: -1 }).limit(5)

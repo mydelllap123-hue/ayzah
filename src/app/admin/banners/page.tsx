@@ -195,6 +195,18 @@ export default function AdminBannersPage() {
             </div>
             
             <form onSubmit={handleSave} className="p-8 overflow-y-auto space-y-6 custom-scrollbar">
+              <div className="space-y-2">
+                <label className="text-[10px] font-black text-brown-400 uppercase tracking-widest ml-4">Campaign Name / Banner Title</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Kerala Pickle Extravaganza"
+                  value={formData.title}
+                  onChange={(e) => setFormData({...formData, title: e.target.value})}
+                  className="w-full bg-pickle-50 border border-pickle-100 px-8 py-5 rounded-[2rem] font-bold text-brown-900 focus:outline-none"
+                />
+              </div>
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] font-black text-brown-400 uppercase tracking-widest ml-4">Banner Mode</label>

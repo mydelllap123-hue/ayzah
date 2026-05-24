@@ -20,6 +20,6 @@ const NewsletterSchema = new Schema({
   }
 }, { timestamps: true });
 
-const Newsletter = models.Newsletter || model("Newsletter", NewsletterSchema);
+const Newsletter = models.Newsletter || model("Newsletter", NewsletterSchema, "newsletters");
 
 export default Newsletter;

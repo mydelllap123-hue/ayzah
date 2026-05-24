@@ -77,5 +77,5 @@ const ReviewSchema = new Schema(
 // Ensure one review per user per product
 ReviewSchema.index({ product: 1, user: 1 }, { unique: true });
 
-const Review = models.Review || model("Review", ReviewSchema);
+const Review = models.Review || model("Review", ReviewSchema, "reviews");
 export default Review;

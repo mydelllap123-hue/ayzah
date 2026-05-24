@@ -26,8 +26,8 @@ function ShopPageContent() {
     const fetchData = async () => {
       try {
         const [prodRes, catRes] = await Promise.all([
-          fetch("/api/admin/products"),
-          fetch("/api/categories")
+          fetch("/api/admin/products", { cache: "no-store" }),
+          fetch("/api/categories", { cache: "no-store" })
         ]);
         const prodResult = await prodRes.json();
         const catResult = await catRes.json();

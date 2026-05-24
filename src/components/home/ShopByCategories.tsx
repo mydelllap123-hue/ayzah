@@ -33,7 +33,7 @@ export default function ShopByCategories() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await fetch("/api/categories");
+        const res = await fetch("/api/categories", { cache: "no-store" });
         const json = await res.json();
         if (json.success && Array.isArray(json.data)) {
           setCategories(json.data);

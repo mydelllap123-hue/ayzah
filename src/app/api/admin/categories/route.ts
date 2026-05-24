@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
 import Product from "@/models/Product";
@@ -31,8 +34,8 @@ export async function GET() {
     await connectDB();
 
     const [vegCount, nonVegCount, vegOverride, nonVegOverride] = await Promise.all([
-      Product.countDocuments({ category: "veg" }),
-      Product.countDocuments({ category: "non-veg" }),
+      Product.countDocuments({ category: { $in: ["veg", "Veg Pickles", "veg-pickles"] } }),
+      Product.countDocuments({ category: { $in: ["non-veg", "Non-Veg Pickles", "non-veg-pickles"] } }),
       Category.findOne({ slug: "veg" }).lean(),
       Category.findOne({ slug: "non-veg" }).lean(),
     ]);
